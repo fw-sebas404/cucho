@@ -130,6 +130,38 @@
                 window.location.href = url; // Redirige a la URL ingresada
             }
         }
+        function actualizarHora() {
+    var ahora = new Date();
+    var horas = ahora.getHours();
+    var minutos = ahora.getMinutes().toString().padStart(2, '0');
+    var segundos = ahora.getSeconds().toString().padStart(2, '0');
+    var periodo = horas >= 12 ? 'PM' : 'AM';
+
+    // Convertir a formato de 12 horas
+    horas = horas % 12;
+    horas = horas ? horas : 12; // La hora '0' debe ser '12'
+    var horaActual = horas + ':' + minutos + ':' + segundos + ' ' + periodo;
+
+    document.getElementById('hora').textContent = horaActual;
+}
+
+setInterval(actualizarHora, 1000);
+actualizarHora();
+
+function openApp(url) {
+    window.open(url, '_blank'); // Abre la URL en una nueva pestaña
+}
+
+function openAddressBar() {
+    let url = prompt("Ingrese la dirección a la que desea ir:");
+    if (url) {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            url = 'http://' + url;
+        }
+        window.location.href = url; // Redirige a la URL ingresada
+    }
+}
+
     </script>
 </body>
 </html>
