@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f0f5; /* Color de fondo por si no se carga la imagen */
+    background-image: url('fondo/fondo1.jpg'); /* Imagen de fondo inicial */
+    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.screen {
+    display: flex;
+    height: 100vh;
+    max-width: 320px;
+    margin: 0 auto;
+    background-color: transparent; /* Fondo transparente para mostrar la imagen de fondo */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0; /* Quitar bordes circulares */
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.app-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.app {
+    text-align: center;
+    width: 33%; /* Ajusta el tamaño para tres aplicaciones por fila */
+    padding: 10px;
+    cursor: pointer;
+}
+
+.app img {
+    width: 50px; /* Tamaño de los íconos */
+    height: 50px;
+    border-radius: 20%;
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.app span {
+    display: block;
+    color: #fff;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.change-background-button {
+    position: fixed; /* Fijado en la parte inferior */
+    bottom: 10px; /* Margen inferior */
+    left: 50%; /* Centramos el botón horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centrarlo correctamente */
+    padding: 10px 20px;
+    background-color: #007bff; /* Color del botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.change-background-button:hover {
+    background-color: #0056b3; /* Color al pasar el cursor por encima */
+}
+
+.hora {
+    background-color: #888; /* Color gris */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    top: 10px; /* Espacio desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    border-radius: 10px; /* Bordes redondeados */
+    z-index: 1000;
+    border: 2px solid #333; /* Borde más oscuro */
+}

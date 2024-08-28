@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de iPhone 5s</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hora" id="hora"></div>
+
+    <div class="screen">
+        <div id="app-container" class="app-container">
+            <!-- Contenedor de aplicaciones -->
+            <div class="app-row">
+                <!-- Aplicaciones existentes -->
+                <div class="app" onclick="openApp('https://www.google.com')">
+                    <img src="icons/google.png" alt="Google">
+                    <span>Google</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.youtube.com')">
+                    <img src="icons/youtube.png" alt="YouTube">
+                    <span>YouTube</span>
+                </div>
+                <div class="app" onclick="openApp('https://drive.google.com')">
+                    <img src="icons/drive.png" alt="Google Drive">
+                    <span>Drive</span>
+                </div>
+                <div class="app" onclick="openApp('https://scratch.mit.edu')">
+                    <img src="icons/scratch.png" alt="Scratch">
+                    <span>Scratch</span>
+                </div>
+                <div class="app" onclick="openApp('https://mail.google.com')">
+                    <img src="icons/gmail.png" alt="Gmail">
+                    <span>Gmail</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.netflix.com')">
+                    <img src="icons/netflix.png" alt="Netflix">
+                    <span>Netflix</span>
+                </div>
+                <!-- Aplicación que abre el cuadro de dirección -->
+                <div class="app" onclick="openAddressBar()">
+                    <img src="icons/addressbar.png" alt="Address Bar">
+                    <span>Navegador</span>
+                </div>
+                <!-- Nuevas aplicaciones -->
+                <div class="app" onclick="openApp('https://calendar.google.com/calendar/u/0/r?pli=1')">
+                    <img src="icons/calendar.png" alt="Calendario">
+                    <span>Calendario</span>
+                </div>
+                <div class="app" onclick="openApp('file.io')">
+                    <img src="icons/camera.png" alt="Camara">
+                    <span>Camara</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.bing.com')">
+                    <img src="icons/search.png" alt="Buscador">
+                    <span>Buscador</span>
+                </div>
+                <div class="app" onclick="openApp('https://zoom.us')">
+                    <img src="icons/zoom.jpg" alt="Zoom">
+                    <span>Zoom</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.bing.com/translator/')">
+                    <img src="icons/traslate.jpg" alt="Traductor">
+                    <span>Traductor</span>
+                </div>
+                <div class="app" onclick="openApp('https://keep.google.com')">
+                    <img src="icons/keep.png" alt="Google Keep">
+                    <span>Google Keep</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.desmos.com/scientific?lang=es')">
+                    <img src="icons/calculator.png" alt="Calculadora">
+                    <span>Calculadora</span>
+                </div>
+                <div class="app" onclick="openApp('https://quickdraw.withgoogle.com/')">
+                    <img src="icons/quickdraw.jpg" alt="Quick Draw">
+                    <span>Quick Draw</span>
+                </div>
+                <div class="app" onclick="openApp('https://warcalla.io')">
+                    <img src="icons/warcall.png" alt="War Call">
+                    <span>War Call</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.y8.com')">
+                    <img src="icons/y8.png" alt="Y8">
+                    <span>Y8</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.google.com/url?q=https://www.google.com/logos/2010/pacman10-i.html&sa=U&ved=2ahUKEwiBp_mZj5GHAxXjqJUCHdOlBQUQFnoECAgQAg&usg=AOvVaw1K5Xt3ocIlwt5PHyndvrWy')">
+                    <img src="icons/pacman.png" alt="Pac-Man">
+                    <span>Pac-Man</span>
+                </div>
+                <div class="app" onclick="openApp('https://www.google.com/url?q=https://snake.googlemaps.com/%3Fhl%3Des&sa=U&ved=2ahUKEwiCnd6D45CHAxUzqJUCHUTCBl4QFnoECAgQAg&usg=AOvVaw1VeIIXL20kTwJCFEuvA1z7')">
+                    <img src="icons/snake.jpg" alt="Snake">
+                    <span>Snake</span>
+                </div>
+                <div class="app" onclick="openApp('https://es.y8.com/games/perfect_piano/mobile')">
+                    <img src="icons/perfectpiano.jpg" alt="Perfec Piano">
+                    <span>Perfec Piano</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón para cambiar el fondo -->
+    <button class="change-background-button" onclick="changeBackground()">Cambiar fondo 😎</button>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script>
+        function actualizarHora() {
+            var ahora = new Date();
+            var horas = ahora.getHours().toString().padStart(2, '0');
+            var minutos = ahora.getMinutes().toString().padStart(2, '0');
+            var segundos = ahora.getSeconds().toString().padStart(2, '0');
+            var horaActual = horas + ':' + minutos + ':' + segundos;
+            document.getElementById('hora').textContent = horaActual;
+        }
+
+        setInterval(actualizarHora, 1000);
+        actualizarHora();
+
+        function openApp(url) {
+            window.open(url, '_blank'); // Abre la URL en una nueva pestaña
+        }
+
+        function openAddressBar() {
+            let url = prompt("Ingrese la dirección a la que desea ir:");
+            if (url) {
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    url = 'http://' + url;
+                }
+                window.location.href = url; // Redirige a la URL ingresada
+            }
+        }
+    </script>
+</body>
+</html>
