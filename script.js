@@ -1,14 +1,14 @@
 let backgrounds = [
-    'url("fondo1.jpg")',
-    'url("fondo2.jpg")',
-    'url("fondo3.jpg")',
-    'url("fondo4.jpg")',
-    'url("fondo5.jpg")',
-    'url("fondo6.jpg")',
-    'url("fondo8.jpg")',
-    'url("fondo9.jpg")',
-    'url("fondo10.jpg")',
-    'url("fondo11.jpg")'
+    'url("1.jpg")',
+    'url("2.jpg")',
+    'url("3.jpg")',
+    'url("4.jpg")',
+    'url("5.jpg")',
+    'url("6.jpg")',
+    'url("8.jpg")',
+    'url("9.jpg")',
+    'url("10.jpg")',
+    'url("11.jpg")'
     // Puedes seguir agregando más fondos aquí
 ];
 
