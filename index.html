@@ -115,6 +115,29 @@
                     <img src="icons/oxford.png" alt="Oxford">
                     <span>Oxford 🉐</span>
                 </div>
+                <div class="app" onclick="copyText('Este es el texto que se copiará al portapapeles')">
+                    <img src="icons/copiar.png" alt="Copiar">
+                    <span>Copiar Texto 📋</span>
+                </div>
+
+<script>
+    function copyText(text) {
+        // Crear un elemento temporal para almacenar el texto
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        // Seleccionar el texto
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // Para dispositivos móviles
+        // Copiar el texto al portapapeles
+        document.execCommand('copy');
+        // Eliminar el elemento temporal
+        document.body.removeChild(tempInput);
+        // Alertar al usuario
+        alert('Texto copiado al portapapeles: ' + text);
+    }
+</script>
+
             </div>
         </div>
     </div>
