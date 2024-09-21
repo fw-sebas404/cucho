@@ -150,7 +150,7 @@
         actualizarHora();
 
         function openApp(url) {
-            window.open(url, '_blank'); 
+            window.open(url, '_blank');
         }
 
         function openSearchModal() {
@@ -166,7 +166,7 @@
             const formattedQuery = encodeURIComponent(query);
             const url = `https://scratch.mit.edu/search/projects?q=${formattedQuery}`;
             window.open(url, '_blank');
-            closeSearchModal(); 
+            closeSearchModal();
         }
 
         function copyText(text) {
@@ -178,7 +178,6 @@
         }
         
         function changeBackground() {
-            // Cambia el fondo de la pantalla
             document.body.style.backgroundImage = "url('fondo/fondo2.jpg')";
         }
     </script>
