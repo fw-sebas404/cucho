@@ -89,3 +89,13 @@ body {
     z-index: 1000;
     border: 2px solid #333; /* Borde más oscuro */
 }
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    display: none; /* Ocultamos el video inicialmente */
+}
