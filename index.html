@@ -124,9 +124,18 @@
     </div>
 
     <!-- Botón para cambiar el fondo -->
-    <button class="change-background-button" onclick="changeBackground()">Cambiar fondo</button>
+     <button class="change-background-button" onclick="changeBackground()">Cambiar fondo</button>
 
-    <script type="text/javascript" src="script.js"></script>
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSearchModal()">&times;</span>
+            <h2>Buscar en Scratch</h2>
+            <input type="text" id="searchInput" placeholder="Escribe tu búsqueda...">
+            <button onclick="searchScratch()">Buscar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
     <script>
         function actualizarHora() {
             var ahora = new Date();
@@ -141,66 +150,37 @@
         actualizarHora();
 
         function openApp(url) {
-            window.open(url, '_blank'); // Abre la URL en una nueva pestaña
+            window.open(url, '_blank'); 
         }
 
-        function openAddressBar() {
-            let url = prompt("Ingrese la dirección a la que desea ir:");
-            if (url) {
-                if (!url.startsWith('http://') && !url.startsWith('https://')) {
-                    url = 'http://' + url;
-                }
-                window.location.href = url; // Redirige a la URL ingresada
-            }
+        function openSearchModal() {
+            document.getElementById('searchModal').style.display = 'block';
         }
-        function actualizarHora() {
-    var ahora = new Date();
-    var horas = ahora.getHours();
-    var minutos = ahora.getMinutes().toString().padStart(2, '0');
-    var segundos = ahora.getSeconds().toString().padStart(2, '0');
-    var periodo = horas >= 12 ? 'PM' : 'AM';
 
-    // Convertir a formato de 12 horas
-    horas = horas % 12;
-    horas = horas ? horas : 12; // La hora '0' debe ser '12'
-    var horaActual = horas + ':' + minutos + ':' + segundos + ' ' + periodo;
-
-    document.getElementById('hora').textContent = horaActual;
-}
-
-setInterval(actualizarHora, 1000);
-actualizarHora();
-
-function openApp(url) {
-    window.open(url, '_blank'); // Abre la URL en una nueva pestaña
-}
-
-function openAddressBar() {
-    let url = prompt("Ingrese la dirección a la que desea ir:");
-    if (url) {
-        if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            url = 'http://' + url;
+        function closeSearchModal() {
+            document.getElementById('searchModal').style.display = 'none';
         }
-        window.location.href = url; // Redirige a la URL ingresada
-    }
-}
 
+        function searchScratch() {
+            const query = document.getElementById('searchInput').value;
+            const formattedQuery = encodeURIComponent(query);
+            const url = `https://scratch.mit.edu/search/projects?q=${formattedQuery}`;
+            window.open(url, '_blank');
+            closeSearchModal(); 
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Texto copiado: " + text);
+            }).catch(err => {
+                alert("Error al copiar: ", err);
+            });
+        }
+        
+        function changeBackground() {
+            // Cambia el fondo de la pantalla
+            document.body.style.backgroundImage = "url('fondo/fondo2.jpg')";
+        }
     </script>
-    <script>
-    let videoVisible = false;
-
-    function toggleVideo() {
-        const video = document.getElementById('background-video');
-        if (videoVisible) {
-            video.pause();
-            video.style.display = 'none'; // Ocultar el video
-        } else {
-            video.play();
-            video.style.display = 'block'; // Mostrar el video
-        }
-        videoVisible = !videoVisible; // Cambiar el estado
-    }
-</script>
-
 </body>
 </html>
