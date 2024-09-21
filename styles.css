@@ -1,11 +1,11 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #000000; /* Color de fondo por si no se carga la imagen */
-    background-image: url('fondo/fondo1.jpg'); /* Imagen de fondo inicial */
-    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-color: #000000; 
+    background-image: url('fondo/fondo1.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .screen {
@@ -13,11 +13,11 @@ body {
     height: 100vh;
     max-width: 320px;
     margin: 0 auto;
-    background-color: transparent; /* Fondo transparente para mostrar la imagen de fondo */
+    background-color: transparent; 
     padding: 20px;
     position: relative;
     overflow: hidden;
-    border-radius: 0; /* Quitar bordes circulares */
+    border-radius: 0; 
 }
 
 .app-container {
@@ -36,13 +36,13 @@ body {
 
 .app {
     text-align: center;
-    width: 33%; /* Ajusta el tamaño para tres aplicaciones por fila */
+    width: 33%; 
     padding: 10px;
     cursor: pointer;
 }
 
 .app img {
-    width: 50px; /* Tamaño de los íconos */
+    width: 50px; 
     height: 50px;
     border-radius: 20%;
     background-color: #fff;
@@ -58,12 +58,12 @@ body {
 }
 
 .change-background-button {
-    position: fixed; /* Fijado en la parte inferior */
-    bottom: 10px; /* Margen inferior */
-    left: 50%; /* Centramos el botón horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centrarlo correctamente */
+    position: fixed; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
     padding: 10px 20px;
-    background-color: #007bff; /* Color del botón */
+    background-color: #007bff; 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -72,35 +72,26 @@ body {
 }
 
 .change-background-button:hover {
-    background-color: #0056b3; /* Color al pasar el cursor por encima */
+    background-color: #0056b3; 
 }
 
 .hora {
-    background-color: #888; /* Color gris */
+    background-color: #888; 
     color: #fff;
     padding: 10px 20px;
     text-align: center;
     font-size: 18px;
     position: fixed;
-    top: 10px; /* Espacio desde la parte superior */
+    top: 10px; 
     left: 50%;
-    transform: translateX(-50%); /* Centrar horizontalmente */
-    border-radius: 10px; /* Bordes redondeados */
+    transform: translateX(-50%); 
+    border-radius: 10px; 
     z-index: 1000;
-    border: 2px solid #333; /* Borde más oscuro */
+    border: 2px solid #333; 
 }
-#background-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    object-fit: cover;
-    display: none; /* Ocultamos el video inicialmente */
-}
+
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none; 
     position: fixed; 
     z-index: 1; 
     left: 0;
