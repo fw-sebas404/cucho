@@ -31,5 +31,29 @@ function openAddressBar() {
         }
         window.location.href = url; // Redirige a la URL ingresada
     }
+function openSearchModal() {
+    document.getElementById('searchModal').style.display = 'block';
+}
+
+function closeSearchModal() {
+    document.getElementById('searchModal').style.display = 'none';
+}
+
+function searchScratch() {
+    const query = document.getElementById('searchInput').value;
+    const formattedQuery = encodeURIComponent(query);
+    const url = `https://scratch.mit.edu/search/projects?q=${formattedQuery}`;
+    window.open(url, '_blank');
+    closeSearchModal(); // Cierra el modal después de buscar
+}
+
+// Para cerrar el modal si se hace clic fuera de él
+window.onclick = function(event) {
+    const modal = document.getElementById('searchModal');
+    if (event.target === modal) {
+        closeSearchModal();
+    }
+}
+
 }
 
