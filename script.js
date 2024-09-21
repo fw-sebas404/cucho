@@ -9,7 +9,6 @@ let backgrounds = [
     'url("9.jpg")',
     'url("10.jpg")',
     'url("11.jpg")'
-    // Puedes seguir agregando más fondos aquí
 ];
 
 let currentBackgroundIndex = 0;
