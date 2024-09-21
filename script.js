@@ -31,6 +31,8 @@ function openAddressBar() {
         }
         window.location.href = url; // Redirige a la URL ingresada
     }
+}
+
 function openSearchModal() {
     document.getElementById('searchModal').style.display = 'block';
 }
@@ -54,6 +56,3 @@ window.onclick = function(event) {
         closeSearchModal();
     }
 }
-
-}
-
