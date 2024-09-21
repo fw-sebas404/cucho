@@ -119,6 +119,16 @@
                     <img src="icons/copiar.png" alt="Copiar">
                     <span>Copiar 📋</span>
                 </div>
+                <div class="app" onclick="toggleVideo()">
+    <img src="icons/facebook.png" alt="Facebook">
+    <span>Facebook 📱</span>
+</div>
+
+<video id="background-video" muted loop>
+    <source src="ruta-del-video.mp4" type="video/mp4">
+    Tu navegador no soporta este video.
+</video>
+
 <script>
     function copyText(text) {
         // Crear un elemento temporal para almacenar el texto
@@ -204,5 +214,21 @@ function openAddressBar() {
 }
 
     </script>
+    <script>
+    let videoVisible = false;
+
+    function toggleVideo() {
+        const video = document.getElementById('background-video');
+        if (videoVisible) {
+            video.pause();
+            video.style.display = 'none'; // Ocultar el video
+        } else {
+            video.play();
+            video.style.display = 'block'; // Mostrar el video
+        }
+        videoVisible = !videoVisible; // Cambiar el estado
+    }
+</script>
+
 </body>
 </html>
