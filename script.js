@@ -1,14 +1,14 @@
 let backgrounds = [
-    'url("1.jpg")',
-    'url("2.jpg")',
-    'url("3.jpg")',
-    'url("4.jpg")',
-    'url("5.jpg")',
-    'url("6.jpg")',
-    'url("8.jpg")',
-    'url("9.jpg")',
-    'url("10.jpg")',
-    'url("11.jpg")'
+    'url("fondos/1.jpg")',
+    'url("fondos/2.jpg")',
+    'url("fondos/3.jpg")',
+    'url("fondos/4.jpg")',
+    'url("fondos/5.jpg")',
+    'url("fondos/6.jpg")',
+    'url("fondos/8.jpg")',
+    'url("fondos/9.jpg")',
+    'url("fondos/10.jpg")',
+    'url("fondos/11.jpg")'
 ];
 
 let currentBackgroundIndex = 0;
